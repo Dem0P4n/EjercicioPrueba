@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { Seccion } from './modelos/historial';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'prueba';
+
+
+
+  public elementosGuardadosSeccion: Array<Seccion> = []
+
+
+  public agregarNuevo(nuevo: Seccion): void{
+    const id: number = this.elementosGuardadosSeccion.length + 1;
+    nuevo.id = id;
+    this.elementosGuardadosSeccion.push(nuevo);
+  }
+
 }

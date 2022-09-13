@@ -1,0 +1,17 @@
+<article>
+  <h2>{{ alumno.rut }}</h2>
+  <h2 *ngIf="alumno.nombreAlumno; then aquiIf; else aquiElse"></h2>
+  <ng-template #aquiIf>
+    <h2>{{alumno.nombreAlumno | uppercase }}
+    {{ alumno.ApellidoAlumno | lowercase }}</h2>
+  </ng-template>
+  <ng-template #aquiElse>
+    <h2>sin nombre</h2>
+  </ng-template>
+  <h2>{{ alumno.edad}}</h2>
+  <h2>{{alumno.seccion.nombreSeccion | uppercase }}</h2>
+
+
+
+
+</article>
